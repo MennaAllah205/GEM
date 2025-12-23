@@ -581,6 +581,43 @@ body.dark-theme .footer-media span:hover {
 }
 
 @media (max-width: 768px) {
+    /* Footer */
+    .footer {
+        padding: 40px 30px;
+    }
+
+    .footer-container {
+        gap: 30px;
+    }
+
+    .footer-details {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .detail-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .detail-item .icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-media {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .footer-media span {
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
     /* Navbar */
     .nav-bar {
         padding: 0 20px;
@@ -590,10 +627,6 @@ body.dark-theme .footer-media span:hover {
     .hamburger {
         display: flex;
         order: 4;
-    }
-
-    .nav-logo {
-        order: 1;
     }
 
     .nav-items {
@@ -610,7 +643,7 @@ body.dark-theme .footer-media span:hover {
     }
 
     .nav-items.active {
-        max-height: 400px;
+        max-height: 800px;
     }
 
     .nav-items ul {
@@ -752,6 +785,60 @@ body.dark-theme .footer-media span:hover {
 }
 
 @media (max-width: 600px) {
+    /* Footer */
+    .footer {
+        padding: 30px 20px;
+    }
+
+    .footer-container {
+        gap: 20px;
+    }
+
+    .footer-brand {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .title-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .title-text {
+        font-size: 20px;
+    }
+
+    .detail-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .detail-item .icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .detail-item h4 {
+        font-size: 14px;
+    }
+
+    .detail-item p {
+        font-size: 12px;
+    }
+
+    .footer-media {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .footer-media span {
+        font-size: 18px;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+
     /* Navbar */
     .nav-bar {
         padding: 0 15px;

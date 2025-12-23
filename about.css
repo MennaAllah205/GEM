@@ -1,0 +1,782 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&display=swap');
+
+body {
+    font-family: 'Cairo', Arial, Helvetica, sans-serif;
+}
+.navbar-section {
+    height: 10%;
+}
+.nav-bar {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    background-color: #e8e2e2;
+}
+
+/* Logo */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.logo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo-text {
+    color: rgb(51, 50, 50);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Nav Items */
+.nav-items ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-items ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-items ul li a:hover {
+    color: rgb(255, 106, 0);
+}
+
+/* CTA Button */
+.cta {
+    padding: 12px 26px;
+    background-color: rgb(255, 106, 0);
+    color: #000;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.cta a {
+    text-decoration: none;
+    color: black;
+}
+
+.cta:hover {
+    background-color: white;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(255, 106, 0);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background: none;
+    border: none;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255, 106, 0, 0.1);
+}
+
+.theme-toggle i {
+    font-size: 20px;
+    color: rgb(255, 106, 0);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover i {
+    transform: scale(1.1);
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+}
+
+body.dark-theme .nav-bar {
+    background-color: #1a1a1a;
+}
+
+body.dark-theme .nav-items ul li a {
+    color: #e0e0e0;
+}
+
+body.dark-theme .nav-items ul li a:hover {
+    color: rgb(255, 106, 0);
+}
+
+body.dark-theme .logo-text {
+    color: #e0e0e0;
+}
+
+body.dark-theme .cta {
+    background-color: rgb(255, 106, 0);
+    color: #000;
+}
+
+body.dark-theme .cta:hover {
+    background-color: #000;
+    color: rgb(255, 106, 0);
+    border: 1px solid rgb(255, 106, 0);
+}
+
+body.dark-theme .about-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url("./images/10.jpg");
+}
+
+body.dark-theme .about-page {
+    background-color: #0a0a0a;
+}
+
+body.dark-theme .about-text h2 {
+    color: #e0e0e0;
+}
+
+body.dark-theme .about-text p {
+    color: #b0b0b0;
+}
+
+body.dark-theme .vision-section {
+    background-color: #1a1a1a;
+}
+
+body.dark-theme .vision-card {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body.dark-theme .vision-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(255, 106, 0, 0.3);
+}
+
+body.dark-theme .vision-card h3 {
+    color: #e0e0e0;
+}
+
+body.dark-theme .vision-card p {
+    color: #b0b0b0;
+}
+
+body.dark-theme .footer {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-theme .detail-item h4 {
+    color: #e0e0e0;
+}
+
+body.dark-theme .detail-item p {
+    color: #b0b0b0;
+}
+
+body.dark-theme .footer-media span {
+    color: #e0e0e0;
+}
+
+body.dark-theme .footer-media span:hover {
+    color: rgb(255, 106, 0);
+}
+
+/* About Hero */
+.about-hero {
+    height: 70vh;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("./images/10.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-hero-content {
+    color: #fff;
+    max-width: 700px;
+    padding: 0 20px;
+}
+
+.about-hero h1 {
+    font-size: 60px;
+    margin: 20px 0;
+}
+
+/* About Page */
+.about-page {
+    padding: 100px 80px;
+}
+
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-text {
+    width: 50%;
+}
+
+.about-text h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.about-image {
+    width: 50%;
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Vision */
+.vision-section {
+    background-color: #e8e2e2;
+    padding: 80px;
+}
+
+.vision-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.vision-card {
+    background: #fff;
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.vision-card:hover {
+    transform: translateY(-8px);
+}
+
+.vision-card i {
+    font-size: 40px;
+    color: rgb(255, 106, 0);
+    margin-bottom: 15px;
+}
+
+
+.footer {
+    background-color: #e8e2e2;
+    padding: 80px 100px;
+    color: black;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-icon {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+}
+
+.title-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title-text {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.footer-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.detail-item {
+    display: flex;
+    gap: 15px;
+}
+
+.detail-item .icon {
+    width: 32px;
+    height: 32px;
+    /* background-color: #39ff14; */
+    border-radius: 50%;
+}
+
+.detail-item h4 {
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.detail-item p {
+    color: black;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-media {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-media span {
+    cursor: pointer;
+    color: black;
+    transition: 0.3s;
+}
+
+
+
+
+
+
+/* ===== ABOUT PAGE RESPONSIVE ===== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    /* Navbar */
+    .nav-bar {
+        padding: 0 30px;
+    }
+
+    .nav-items ul {
+        gap: 20px;
+    }
+
+    .nav-items ul li a {
+        font-size: 14px;
+    }
+
+    .cta {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* About Hero */
+    .about-hero h1 {
+        font-size: 48px;
+    }
+
+    /* About Page */
+    .about-page {
+        padding: 80px 40px;
+    }
+
+    .about-wrapper {
+        gap: 40px;
+    }
+
+    .about-text h2 {
+        font-size: 32px;
+    }
+
+    .about-image {
+        height: 350px;
+    }
+
+    /* Vision */
+    .vision-section {
+        padding: 60px 40px;
+    }
+
+    .vision-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+}
+
+/* Mobile Landscape & Small Tablets (600px - 768px) */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .nav-bar {
+        padding: 0 20px;
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+        order: 4;
+    }
+
+    .nav-logo {
+        order: 1;
+    }
+
+    .nav-items {
+        order: 5;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #e8e2e2;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-items.active {
+        max-height: 400px;
+    }
+
+    .nav-items ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-items ul li {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .nav-items ul li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-items ul li a {
+        font-size: 16px;
+    }
+
+    .cta {
+        order: 3;
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .logo-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    /* About Hero */
+    .about-hero {
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    .about-hero h1 {
+        font-size: 36px;
+    }
+
+    .about-hero h5 {
+        font-size: 12px;
+    }
+
+    .about-hero p {
+        font-size: 14px;
+    }
+
+    /* About Page */
+    .about-page {
+        padding: 60px 30px;
+    }
+
+    .about-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-text {
+        width: 100%;
+    }
+
+    .about-text h2 {
+        font-size: 28px;
+    }
+
+    .about-text p {
+        font-size: 15px;
+    }
+
+    .about-image {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* Vision */
+    .vision-section {
+        padding: 50px 30px;
+    }
+
+    .vision-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .vision-card:last-child {
+        grid-column: span 1;
+    }
+}
+
+/* Mobile Portrait (max 600px) */
+@media (max-width: 600px) {
+    /* Navbar */
+    .nav-bar {
+        padding: 0 15px;
+    }
+
+    .nav-items ul {
+        gap: 12px;
+    }
+
+    .nav-items ul li a {
+        font-size: 12px;
+    }
+
+    .cta {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    .logo-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    /* About Hero */
+    .about-hero {
+        height: 70vh;
+        min-height: 500px;
+    }
+
+    .about-hero-content {
+        padding: 0 20px;
+    }
+
+    .about-hero h5 {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .about-hero h1 {
+        font-size: 32px;
+        margin: 15px 0;
+        line-height: 1.2;
+    }
+
+    .about-hero p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* About Page */
+    .about-page {
+        padding: 40px 20px;
+    }
+
+    .about-wrapper {
+        gap: 25px;
+    }
+
+    .about-text h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .about-text p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .about-image {
+        height: 250px;
+        border-radius: 15px;
+    }
+
+    /* Vision */
+    .vision-section {
+        padding: 40px 20px;
+    }
+
+    .vision-container {
+        gap: 20px;
+    }
+
+    .vision-card {
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+
+    .vision-card i {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .vision-card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .vision-card p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* Extra Small Devices (max 400px) */
+@media (max-width: 400px) {
+    /* Navbar */
+    .nav-bar {
+        padding: 0 10px;
+    }
+
+    .nav-items ul {
+        gap: 8px;
+    }
+
+    .nav-items ul li a {
+        font-size: 11px;
+    }
+
+    .cta {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text {
+        font-size: 14px;
+    }
+
+    /* About Hero */
+    .about-hero h1 {
+        font-size: 28px;
+    }
+
+    .about-hero p {
+        font-size: 13px;
+    }
+
+    /* About Page */
+    .about-page {
+        padding: 30px 15px;
+    }
+
+    .about-text h2 {
+        font-size: 22px;
+    }
+
+    .about-text p {
+        font-size: 13px;
+    }
+
+    .about-image {
+        height: 220px;
+    }
+
+    /* Vision */
+    .vision-section {
+        padding: 30px 15px;
+    }
+
+    .vision-card {
+        padding: 25px 15px;
+    }
+
+    .vision-card h3 {
+        font-size: 18px;
+    }
+
+    .vision-card p {
+        font-size: 13px;
+    }
+}

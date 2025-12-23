@@ -1,0 +1,871 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&display=swap');
+
+body {
+    font-family: 'Cairo', Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+
+/* Navbar */
+.navbar-section {
+    height: 10%;
+}
+
+.nav-bar {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    background-color: #e8e2e2;
+}
+
+/* Logo */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.logo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo-text {
+    color: rgb(51, 50, 50);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Nav Items */
+.nav-items ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-items ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-items ul li a:hover {
+    color: rgb(255, 106, 0);
+}
+
+.nav-items ul li a.active {
+    color: rgb(255, 106, 0);
+}
+
+/* CTA Button */
+.cta {
+    padding: 12px 26px;
+    background-color: rgb(255, 106, 0);
+    color: #000;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.cta:hover {
+    background-color: white;
+}
+
+.cta a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(255, 106, 0);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background: none;
+    border: none;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255, 106, 0, 0.1);
+}
+
+.theme-toggle i {
+    font-size: 20px;
+    color: rgb(255, 106, 0);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover i {
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.visit-hero {
+    position: relative;
+    width: 100%;
+    height: 89vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    z-index: 2;
+}
+
+.visit-hero-content {
+    color: #fff;
+    max-width: 700px;
+    z-index: 1;
+}
+
+.visit-hero h1 {
+    font-size: 56px;
+    margin: 20px 0;
+}
+
+.visit-hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Visit Info Section */
+.visit-info {
+    padding: 100px;
+    background-color: #fff;
+}
+
+.visit-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.visit-intro h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.visit-intro p {
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.visit-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.visit-card {
+    background-color: #e8e2e2;
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.visit-card:hover {
+    transform: translateY(-8px);
+}
+
+.visit-card i {
+    font-size: 36px;
+    color: rgb(255, 106, 0);
+    margin-bottom: 15px;
+}
+
+.visit-card h3 {
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.visit-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Booking Section */
+.booking-section {
+    padding: 120px 100px;
+    background-color: #e8e2e2;
+}
+
+.booking-container {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.booking-text {
+    width: 40%;
+}
+
+.booking-text h5 {
+ containers
+   署 letter-spacing影响着
+    Carbon
+    TSX
+alk
+    curiosity
+    boroughsersch
+   gestion
+   ieh
+    x
+    
+    letter-spacing: 3px;
+    color: rgb(255, 106, 0);
+    margin-bottom: 10px;
+}
+
+.booking-text h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.booking-text p {
+    line-height: 1.7;
+    color: #444;
+}
+
+.booking-form {
+    width: 60%;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: rgb(255, 106, 0);
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.booking-btn {
+    grid-column: span 2;
+    padding: 16px;
+    border: none;
+    border-radius: 30px;
+    background-color: rgb(255, 106, 0);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #000;
+}
+
+.booking-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Tips Section */
+.visit-tips {
+    padding: 80px 100px 120px;
+    background-color: #111;
+    color: #fff;
+}
+
+.visit-tips h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 38px;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.tip {
+    text-align: center;
+}
+
+.tip i {
+    font-size: 28px;
+    color: rgb(255, 106, 0);
+    margin-bottom: 10px;
+}
+
+.tip p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background-color: #e8e2e2;
+    padding: 80px 100px;
+    color: black;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.title-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title-text {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.footer-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.detail-item {
+    display: flex;
+    gap: 15px;
+}
+
+.detail-item .icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.detail-item h4 {
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.detail-item p {
+    color: black;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-media {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-media span {
+    cursor: pointer;
+    color: black;
+    transition: 0.3s;
+}
+
+.footer-media span:hover {
+    color: rgb(255, 106, 0);
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+}
+
+body.dark-theme .nav-bar {
+    background-color: #1a1a1a;
+}
+
+body.dark-theme .nav-items ul li a {
+    color: #e0e0e0;
+}
+
+body.dark-theme .nav-items ul li a:hover {
+    color: rgb(255, 106, 0);
+}
+
+body.dark-theme .logo-text {
+    color: #e0e0e0;
+}
+
+body.dark-theme .cta {
+    background-color: rgb(255, 106, 0);
+    color: #000;
+}
+
+body.dark-theme .cta:hover {
+    background-color: #000;
+    color: rgb(255, 106, 0);
+    border: 1px solid rgb(255, 106, 0);
+}
+
+body.dark-theme .visit-info {
+    background-color: #1a1a1a;
+}
+
+body.dark-theme .visit-intro h2 {
+    color: #e0e0e0;
+}
+
+body.dark-theme .visit-intro p {
+    color: #b0b0b0;
+}
+
+body.dark-theme .visit-card {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body.dark-theme .visit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(255, 106, 0, 0.3);
+}
+
+body.dark-theme .visit-card h3 {
+    color: #e0e0e0;
+}
+
+body.dark-theme .visit-card p {
+    color: #b0b0b0;
+}
+
+body.dark-theme .booking-section {
+    background-color: #1a1a1a;
+}
+
+body.dark-theme .booking-text h5 {
+    color: rgb(255, 106, 0);
+}
+
+body.dark-theme .booking-text h2 {
+    color: #e0e0e0;
+}
+
+body.dark-theme .booking-text p {
+    color: #b0b0b0;
+}
+
+body.dark-theme .booking-form {
+    background-color: #2a2a2a;
+}
+
+body.dark-theme .form-group input,
+body.dark-theme .form-group select,
+body.dark-theme .form-group textarea {
+    background-color: #3a3a3a;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+body.dark-theme .form-group input:focus,
+body.dark-theme .form-group select:focus,
+body.dark-theme .form-group textarea:focus {
+    border-color: rgb(255, 106, 0);
+}
+
+body.dark-theme .booking-btn {
+    background-color: rgb(255, 106, 0);
+    color: #000;
+}
+
+body.dark-theme .booking-btn:hover {
+    background-color: #000;
+    color: rgb(255, 106, 0);
+}
+
+body.dark-theme .footer {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-theme .detail-item h4 {
+    color: #e0e0e0;
+}
+
+body.dark-theme .detail-item p {
+    color: #b0b0b0;
+}
+
+body.dark-theme .footer-media span {
+    color: #e0e0e0;
+}
+
+body.dark-theme .footer-media span:hover {
+    color: rgb(255, 106, 0);
+}
+
+body.dark-theme .nav-items {
+    background-color: #1a1a1a;
+}
+
+/* Dark Theme Navbar Items Hover */
+body.dark-theme .nav-items ul li a:hover {
+    color: rgb(255, 106, 0);
+}
+
+body.dark-theme .nav-items ul li a.active {
+    color: rgb(255, 106, 0);
+}
+
+/* Dark Theme CTA Button Hover */
+body.dark-theme .cta:hover {
+    background-color: #000;
+    color: rgb(255, 106, 0);
+    border: 1px solid rgb(255, 106, 0);
+}
+
+/* Dark Theme Theme Toggle Hover */
+body.dark-theme .theme-toggle:hover {
+    background-color: rgba(255, 106, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-bar {
+        padding: 0 30px;
+    }
+    
+    .logo-img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .nav-items ul {
+        gap: 20px;
+    }
+    
+    .nav-items ul li a {
+        font-size: 14px;
+    }
+    
+    .cta {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .visit-hero h1 {
+        font-size: 48px;
+    }
+    
+    .visit-info {
+        padding: 80px 60px;
+    }
+    
+    .visit-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .visit-card {
+        padding: 30px;
+    }
+    
+    .booking-section {
+        padding: 100px 60px;
+    }
+    
+    .booking-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .booking-text,
+    .booking-form {
+        width: 100%;
+    }
+    
+    .booking-form {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .full-width {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-bar {
+        padding: 0 20px;
+        position: relative;
+        height: auto;
+        padding: 15px 20px;
+    }
+    
+    .hamburger {
+        display: flex;
+        order: 4;
+    }
+    
+    .theme-toggle {
+        display: flex;
+        order: 5;
+    }
+    
+    .nav-logo {
+        order: 1;
+        gap: 8px;
+    }
+    
+    .logo-img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .logo-text {
+        font-size: 18px;
+    }
+    
+    .nav-items {
+        order: 6;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #e8e2e2;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .nav-items.active {
+        max-height: 400px;
+    }
+    
+    .nav-items ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .nav-items ul li {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .nav-items ul li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-items ul li a {
+        font-size: 16px;
+    }
+    
+    .cta {
+        order: 3;
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    
+    .video-overlay {
+        padding: 0 20px;
+    }
+
+    .visit-hero-content h1 {
+        font-size: 40px;
+    }
+
+    .visit-hero-content p {
+        font-size: 16px;
+    }
+    
+    .visit-info {
+        padding: 60px 20px;
+    }
+    
+    .visit-intro h2 {
+        font-size: 32px;
+    }
+    
+    .visit-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .visit-card {
+        padding: 25px;
+    }
+    
+    .booking-section {
+        padding: 80px 20px;
+    }
+    
+    .booking-text h2 {
+        font-size: 32px;
+    }
+    
+    .booking-form {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .visit-hero h1 {
+        font-size: 32px;
+    }
+    
+    .visit-hero-content p {
+        font-size: 14px;
+    }
+    
+    .visit-info {
+        padding: 40px 15px;
+    }
+    
+    .visit-intro h2 {
+        font-size: 28px;
+    }
+    
+    .visit-card {
+        padding: 20px;
+    }
+    
+    .visit-card i {
+        font-size: 28px;
+    }
+    
+    .booking-section {
+        padding: 60px 15px;
+    }
+    
+    .booking-text h2 {
+        font-size: 28px;
+    }
+    
+    .booking-form {
+        padding: 25px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+    
+    .booking-btn {
+        padding: 14px;
+        font-size: 14px;
+    }
+    
+    .visit-tips {
+        padding: 60px 15px;
+    }
+    
+    .visit-tips h2 {
+        font-size: 28px;
+    }
+    
+    .tip {
+        padding: 15px;
+    }
+    
+    .tip p {
+        font-size: 14px;
+    }
+}

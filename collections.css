@@ -1,0 +1,879 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&display=swap');
+
+body {
+    font-family: 'Cairo', Arial, Helvetica, sans-serif;
+}
+.navbar-section {
+    height: 10%;
+}
+.nav-bar {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    background-color: #e8e2e2;
+}
+
+/* Logo */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.logo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo-text {
+    color: rgb(51, 50, 50);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Nav Items */
+.nav-items ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-items ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-items ul li a:hover {
+    color: rgb(255, 106, 0);
+}
+
+/* CTA Button */
+.cta {
+    padding: 12px 26px;
+    background-color: rgb(255, 106, 0);
+    color: #000;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.cta a {
+    text-decoration: none;
+    color: black;
+}
+.cta:hover {
+    background-color: white;
+}
+
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(255, 106, 0);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background: none;
+    border: none;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255, 106, 0, 0.1);
+}
+
+.theme-toggle i {
+    font-size: 20px;
+    color: rgb(255, 106, 0);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover i {
+    transform: scale(1.1);
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+}
+
+body.dark-theme .nav-bar {
+    background-color: #1a1a1a;
+}
+
+body.dark-theme .nav-items ul li a {
+    color: #e0e0e0;
+}
+
+body.dark-theme .nav-items ul li a:hover {
+    color: rgb(255, 106, 0);
+}
+
+body.dark-theme .logo-text {
+    color: #e0e0e0;
+}
+
+body.dark-theme .cta {
+    background-color: rgb(255, 106, 0);
+    color: #000;
+}
+
+body.dark-theme .cta:hover {
+    background-color: #000;
+    color: rgb(255, 106, 0);
+    border: 1px solid rgb(255, 106, 0);
+}
+
+body.dark-theme .collections-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url("./images/11.jpg");
+}
+
+body.dark-theme .collections-intro {
+    background-color: #1a1a1a;
+}
+
+body.dark-theme .collections-intro h5 {
+    color: rgb(255, 106, 0);
+}
+
+body.dark-theme .collections-intro h2 {
+    color: #e0e0e0;
+}
+
+body.dark-theme .collections-intro p {
+    color: #b0b0b0;
+}
+
+body.dark-theme .collections-page {
+    background-color: #0a0a0a;
+}
+
+body.dark-theme .collections-header h2 {
+    color: #e0e0e0;
+}
+
+body.dark-theme .collections-header p {
+    color: #b0b0b0;
+}
+
+body.dark-theme .collection-card {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body.dark-theme .collection-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(255, 106, 0, 0.3);
+}
+
+body.dark-theme .collection-card h4 {
+    color: #e0e0e0;
+}
+
+body.dark-theme .collection-card p {
+    color: #b0b0b0;
+}
+
+body.dark-theme .footer {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-theme .detail-item h4 {
+    color: #e0e0e0;
+}
+
+body.dark-theme .detail-item p {
+    color: #b0b0b0;
+}
+
+body.dark-theme .footer-media span {
+    color: #e0e0e0;
+}
+
+body.dark-theme .footer-media span:hover {
+    color: rgb(255, 106, 0);
+}
+
+/* Collections  */
+.collections-hero {
+    height: 100vh;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("./images/14jpg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.collections-hero-content {
+    color: #fff;
+    max-width: 700px;
+}
+
+.collections-hero h1 {
+    font-size: 58px;
+    margin: 20px 0;
+}
+
+/* Collections Intro */
+.collections-intro {
+    padding: 120px 100px 60px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.collections-intro h5 {
+    letter-spacing: 3px;
+    color: rgb(255, 106, 0);
+    margin-bottom: 15px;
+}
+
+.collections-intro h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.collections-intro p {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Bigger Collections Page */
+.collections-page {
+    padding: 80px 100px 140px;
+
+}
+
+/* Bigger Grid */
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* Bigger Cards */
+.collection-card {
+    background-color: #111;
+    border-radius: 22px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+}
+
+.collection-card:hover {
+    transform: translateY(-10px);
+}
+
+.collection-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    background-color: #000;
+}
+
+
+
+
+/* Card Content */
+.card-content {
+    padding: 25px;
+}
+
+.card-content h4 {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.card-content span {
+    display: block;
+    font-size: 13px;
+    color: rgb(255, 106, 0);
+    margin-bottom: 12px;
+}
+
+.card-content p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.collections-page {
+    padding: 100px 80px;
+    background-color: #000;
+}
+
+
+
+.collections-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.collections-header h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+
+
+
+
+
+
+.collections-header p {
+    color: white;
+}
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.collection-card {
+    background-color: #111;
+    border-radius: 18px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.collection-card:hover {
+    transform: translateY(-8px);
+}
+
+.collection-card img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
+
+.collection-card h4 {
+    color: #fff;
+    margin: 16px 16px 6px;
+}
+
+.collection-card p {
+    color: #ccc;
+    margin: 0 16px;
+    font-size: 14px;
+}
+
+
+.footer {
+    background-color: #e8e2e2;
+    padding: 80px 100px;
+    color: black;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-icon {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+}
+
+.title-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title-text {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.footer-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.detail-item {
+    display: flex;
+    gap: 15px;
+}
+
+.detail-item .icon {
+    width: 32px;
+    height: 32px;
+    /* background-color: #39ff14; */
+    border-radius: 50%;
+}
+
+.detail-item h4 {
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.detail-item p {
+    color: black;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-media {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-media span {
+    cursor: pointer;
+    color: black;
+    transition: 0.3s;
+}
+
+/* ===== COLLECTIONS PAGE RESPONSIVE ===== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    /* Navbar */
+    .nav-bar {
+        padding: 0 30px;
+    }
+
+    .nav-items ul {
+        gap: 20px;
+    }
+
+    .nav-items ul li a {
+        font-size: 14px;
+    }
+
+    .cta {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* Collections Hero */
+    .collections-hero h1 {
+        font-size: 48px;
+    }
+
+    .collections-hero h5 {
+        font-size: 16px;
+    }
+
+    /* Collections Intro */
+    .collections-intro {
+        padding: 100px 60px 40px;
+    }
+
+    .collections-intro h2 {
+        font-size: 40px;
+    }
+
+    .collections-intro p {
+        font-size: 15px;
+    }
+
+    /* Collections Page */
+    .collections-page {
+        padding: 60px 60px 100px;
+    }
+
+    .collections-header h2 {
+        font-size: 36px;
+    }
+
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+}
+
+/* Mobile Landscape & Small Tablets (600px - 768px) */
+@media (max-width: 768px) {
+    /* Navbar */
+    .nav-bar {
+        padding: 0 20px;
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+        order: 4;
+    }
+
+    .nav-logo {
+        order: 1;
+    }
+
+    .nav-items {
+        order: 5;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #e8e2e2;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-items.active {
+        max-height: 400px;
+    }
+
+    .nav-items ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-items ul li {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .nav-items ul li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-items ul li a {
+        font-size: 16px;
+    }
+
+    .cta {
+        order: 3;
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .logo-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    /* Collections Hero */
+    .collections-hero {
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    .collections-hero h1 {
+        font-size: 36px;
+    }
+
+    .collections-hero h5 {
+        font-size: 14px;
+    }
+
+    .collections-hero p {
+        font-size: 14px;
+    }
+
+    /* Collections Intro */
+    .collections-intro {
+        padding: 80px 30px 30px;
+    }
+
+    .collections-intro h2 {
+        font-size: 32px;
+    }
+
+    .collections-intro p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* Collections Page */
+    .collections-page {
+        padding: 50px 30px 80px;
+    }
+
+    .collections-header h2 {
+        font-size: 28px;
+    }
+
+    .collections-header p {
+        font-size: 14px;
+    }
+
+    .collections-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .collection-card img {
+        height: 350px;
+    }
+
+    .collection-card h4 {
+        font-size: 18px;
+        margin: 12px 12px 4px;
+    }
+
+    .collection-card p {
+        font-size: 13px;
+        margin: 0 12px 15px;
+    }
+}
+
+/* Mobile Portrait (max 600px) */
+@media (max-width: 600px) {
+    /* Navbar */
+    .nav-bar {
+        padding: 0 15px;
+    }
+
+    .nav-items ul {
+        gap: 12px;
+    }
+
+    .nav-items ul li a {
+        font-size: 12px;
+    }
+
+    .cta {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    .logo-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    /* Collections Hero */
+    .collections-hero {
+        height: 70vh;
+        min-height: 500px;
+    }
+
+    .collections-hero-content {
+        padding: 0 20px;
+    }
+
+    .collections-hero h5 {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .collections-hero h1 {
+        font-size: 32px;
+        margin: 15px 0;
+        line-height: 1.2;
+    }
+
+    .collections-hero p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    /* Collections Intro */
+    .collections-intro {
+        padding: 60px 20px 25px;
+    }
+
+    .collections-intro h5 {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .collections-intro h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .collections-intro p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    /* Collections Page */
+    .collections-page {
+        padding: 40px 20px 60px;
+    }
+
+    .collections-header {
+        margin-bottom: 40px;
+    }
+
+    .collections-header h2 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .collections-header p {
+        font-size: 13px;
+    }
+
+    .collections-grid {
+        gap: 20px;
+    }
+
+    .collection-card {
+        border-radius: 15px;
+    }
+
+    .collection-card img {
+        height: 280px;
+    }
+
+    .collection-card h4 {
+        font-size: 16px;
+        margin: 10px 10px 3px;
+    }
+
+    .collection-card p {
+        font-size: 12px;
+        margin: 0 10px 12px;
+    }
+}
+
+/* Extra Small Devices (max 400px) */
+@media (max-width: 400px) {
+    /* Navbar */
+    .nav-bar {
+        padding: 0 10px;
+    }
+
+    .nav-items ul {
+        gap: 8px;
+    }
+
+    .nav-items ul li a {
+        font-size: 11px;
+    }
+
+    .cta {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text {
+        font-size: 14px;
+    }
+
+    /* Collections Hero */
+    .collections-hero h1 {
+        font-size: 28px;
+    }
+
+    .collections-hero p {
+        font-size: 12px;
+    }
+
+    /* Collections Intro */
+    .collections-intro h2 {
+        font-size: 24px;
+    }
+
+    .collections-intro p {
+        font-size: 12px;
+    }
+
+    /* Collections Page */
+    .collections-page {
+        padding: 30px 15px 50px;
+    }
+
+    .collections-header h2 {
+        font-size: 20px;
+    }
+
+    .collection-card img {
+        height: 240px;
+    }
+
+    .collection-card h4 {
+        font-size: 14px;
+    }
+
+    .collection-card p {
+        font-size: 11px;
+    }
+}

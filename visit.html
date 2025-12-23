@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit - Grand Egyptian Museum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="visit.css">
+    <link rel="stylesheet" href="toast.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="hamburger.js"></script>
+    <script src="theme.js"></script>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <section class="navbar-section">
+        <div class="nav-bar">
+            <div class="nav-logo">
+                <div class="logo-img"><img src="./images/logo.png" alt="GEM Logo"></div>
+                <div class="logo-text">GEM</div>
+            </div>
+
+            <div class="nav-items">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./collections.html">Collections</a></li>
+                    <li><a href="./news.html">News</a></li>
+                    <li><a href="map.html">Map</a></li>
+                    <li><a href="foodcorner.html">Food Corner</a></li>
+                    <li><a href="./visit.html" class="active">Visit</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./team.html">Team</a></li>
+                </ul>
+            </div>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="theme-toggle">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+
+            <div class="cta"><a href="./visit.html#plan">Book Tickets</a></div>
+        </div>
+    </section>
+
+    <!-- Visit Hero Section -->
+    <section class="visit-hero" id="video">
+        <video src="./video/hero-vedio1.mp4" autoplay muted loop playsinline class="hero-video"></video>
+        
+    </section>
+
+    <!-- Visit Info Section -->
+    <section class="visit-info" id="plan">
+        <div class="visit-intro">
+            <h2>Before You Visit</h2>
+            <p>
+                The Grand Egyptian Museum welcomes visitors from around the world. 
+                Plan your trip in advance to enjoy a smooth and enriching experience.
+            </p>
+        </div>
+
+        <div class="visit-cards">
+            <div class="visit-card">
+                <i class="fa-solid fa-clock"></i>
+                <h3>Opening Hours</h3>
+                <p>
+                    Daily: 9:00 AM – 6:00 PM<br>
+                    Last entry: 5:00 PM<br>
+                    Closed on Mondays
+                </p>
+            </div>
+
+            <div class="visit-card">
+                <i class="fa-solid fa-ticket"></i>
+                <h3>Ticket Prices</h3>
+                <p>
+                    Adults: EGP 200<br>
+                    Students: EGP 100<br>
+                    Children: Free (under 12)
+                </p>
+            </div>
+
+            <div class="visit-card">
+                <i class="fa-solid fa-camera"></i>
+                <h3>Photography</h3>
+                <p>
+                    Personal photography allowed<br>
+                    No flash photography<br>
+                    Professional permits required
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="booking-container">
+            <div class="booking-text">
+                <h5>BOOK YOUR VISIT</h5>
+                <h2>Reserve Your Experience</h2>
+                <p>
+                    Book your tickets online to skip the queues and enjoy priority access 
+                    to the world's most comprehensive collection of ancient Egyptian treasures.
+                </p>
+            </div>
+
+            <form class="booking-form" id="plan">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email"  required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"  required pattern="[0-9]{11}" title="Please enter a valid 11-digit phone number">
+                </div>
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp Number</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="Enter WhatsApp number (optional)"  pattern="[0-9]{11}" title="Please enter a valid 11-digit WhatsApp number">
+                </div>
+                <div class="form-group">
+                    <label for="visitDate">Visit Date *</label>
+                    <input type="date" id="visitDate" name="visitDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="visitors">Number of Visitors *</label>
+                    <select id="visitors" name="visitors" required>
+                        <option value="">Select number of visitors</option>
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People</option>
+                        <option value="3">3 People</option>
+                        <option value="4">4 People</option>
+                        <option value="5+">5+ People</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ticketType">Ticket Type *</label>
+                    <select id="ticketType" name="ticketType" required>
+                        <option value="">Select ticket type</option>
+                        <option value="adult">Adult (EGP 200)</option>
+                        <option value="student">Student (EGP 100)</option>
+                        <option value="child">Child (Free)</option>
+                        <option value="family">Family Package</option>
+                    </select>
+                </div>
+                <div class="form-group full-width">
+                    <label for="requirements">Special Requirements</label>
+                    <textarea id="requirements" name="requirements" placeholder="Any special requirements or notes (optional)" rows="4"></textarea>
+                </div>
+                <button type="submit" class="booking-btn" onclick="handleBooking(event)">Book Now</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // RADICAL TOAST SOLUTION - INLINE SCRIPT
+        function showRadicalToast(message, type = 'success') {
+            // Remove any existing toasts
+            const existing = document.querySelectorAll('.radical-toast');
+            existing.forEach(toast => toast.remove());
+            
+            // Create toast
+            const toast = document.createElement('div');
+            toast.className = `radical-toast radical-toast-${type}`;
+            toast.textContent = message;
+            
+            // Style it
+            toast.style.cssText = `
+                position: fixed !important;
+                top: 20px !important;
+                right: 20px !important;
+                background: ${type === 'success' ? '#28a745' : '#dc3545'} !important;
+                color: white !important;
+                padding: 15px 20px !important;
+                border-radius: 8px !important;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+                z-index: 999999 !important;
+                font-family: 'Cairo', Arial, sans-serif !important;
+                font-size: 14px !important;
+                max-width: 300px !important;
+                border: 3px solid white !important;
+                opacity: 0 !important;
+                transform: translateX(100%) !important;
+                transition: all 0.3s ease !important;
+            `;
+            
+            // Add to body
+            document.body.appendChild(toast);
+            
+            // Animate in
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateX(0)';
+            }, 10);
+            
+            // Remove after 4 seconds
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.parentNode.removeChild(toast);
+                    }
+                }, 300);
+            }, 4000);
+        }
+        
+        // Handle booking
+        function handleBooking(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            // Try multiple methods to get form values
+            const form = document.getElementById('plan');
+            console.log('Form found:', form);
+            
+            // Method 1: Direct form elements
+            const fullName1 = form.fullName?.value?.trim() || '';
+            const email1 = form.email?.value?.trim() || '';
+            const phone1 = form.phone?.value?.trim() || '';
+            const visitDate1 = form.visitDate?.value?.trim() || '';
+            const visitors1 = form.visitors?.value?.trim() || '';
+            const ticketType1 = form.ticketType?.value?.trim() || '';
+            
+            console.log('Method 1 values:', {
+                fullName1: `"${fullName1}"`,
+                email1: `"${email1}"`,
+                phone1: `"${phone1}"`,
+                visitDate1: `"${visitDate1}"`,
+                visitors1: `"${visitors1}"`,
+                ticketType1: `"${ticketType1}"`
+            });
+            
+            // Method 2: querySelector
+            const fullName2 = document.getElementById('fullName')?.value?.trim() || '';
+            const email2 = document.getElementById('email')?.value?.trim() || '';
+            const phone2 = document.getElementById('phone')?.value?.trim() || '';
+            const visitDate2 = document.getElementById('visitDate')?.value?.trim() || '';
+            const visitors2 = document.getElementById('visitors')?.value?.trim() || '';
+            const ticketType2 = document.getElementById('ticketType')?.value?.trim() || '';
+            
+            console.log('Method 2 values:', {
+                fullName2: `"${fullName2}"`,
+                email2: `"${email2}"`,
+                phone2: `"${phone2}"`,
+                visitDate2: `"${visitDate2}"`,
+                visitors2: `"${visitors2}"`,
+                ticketType2: `"${ticketType2}"`
+            });
+            
+            // Method 3: getElementsByName
+            const fullName3 = document.getElementsByName('fullName')[0]?.value?.trim() || '';
+            const email3 = document.getElementsByName('email')[0]?.value?.trim() || '';
+            const phone3 = document.getElementsByName('phone')[0]?.value?.trim() || '';
+            const visitDate3 = document.getElementsByName('visitDate')[0]?.value?.trim() || '';
+            const visitors3 = document.getElementsByName('visitors')[0]?.value?.trim() || '';
+            const ticketType3 = document.getElementsByName('ticketType')[0]?.value?.trim() || '';
+            
+            console.log('Method 3 values:', {
+                fullName3: `"${fullName3}"`,
+                email3: `"${email3}"`,
+                phone3: `"${phone3}"`,
+                visitDate3: `"${visitDate3}"`,
+                visitors3: `"${visitors3}"`,
+                ticketType3: `"${ticketType3}"`
+            });
+            
+            // Use the method that works
+            const fullName = fullName2 || fullName1 || fullName3;
+            const email = email2 || email1 || email3;
+            const phone = phone2 || phone1 || phone3;
+            const visitDate = visitDate2 || visitDate1 || visitDate3;
+            const visitors = visitors2 || visitors1 || visitors3;
+            const ticketType = ticketType2 || ticketType1 || ticketType3;
+            
+            console.log('Final values:', {
+                fullName: `"${fullName}"`,
+                email: `"${email}"`,
+                phone: `"${phone}"`,
+                visitDate: `"${visitDate}"`,
+                visitors: `"${visitors}"`,
+                ticketType: `"${ticketType}"`
+            });
+            
+            // Validation with better error messages
+            const errors = [];
+            if (!fullName) errors.push('Full Name');
+            if (!email) errors.push('Email Address');
+            if (!phone) errors.push('Phone Number');
+            if (!visitDate) errors.push('Visit Date');
+            if (!visitors) errors.push('Number of Visitors');
+            if (!ticketType) errors.push('Ticket Type');
+            
+            if (errors.length > 0) {
+                console.log('Validation errors:', errors);
+                showRadicalToast(`يرجى ملء الحقول التالية: ${errors.join(', ')}`, 'error');
+                return false;
+            }
+            
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                showRadicalToast('يرجى إدخال بريد إلكتروني صحيح', 'error');
+                return false;
+            }
+            
+            // Phone validation
+            const phonePattern = /^[0-9]{11}$/;
+            if (!phonePattern.test(phone)) {
+                showRadicalToast('يرجى إدخال رقم هاتف صحيح مكون من 11 رقم', 'error');
+                return false;
+            }
+            
+            // Success
+            showRadicalToast('تم الحجز بنجاح! ننتظر زيارتك في المتحف.   : ', 'success');
+            
+            // Reset form after longer delay to let user see success message
+            setTimeout(() => {
+                console.log('Attempting to reset form...');
+                form.reset();
+                
+                // Clear individual fields as backup
+                const fields = ['fullName', 'email', 'phone', 'whatsapp', 'visitors', 'ticketType', 'requirements'];
+                fields.forEach(fieldName => {
+                    const field = document.getElementById(fieldName);
+                    if (field) {
+                        field.value = '';
+                        console.log(`Cleared field: ${fieldName}`);
+                    }
+                });
+                
+                // Don't reset the date - leave it empty for user to choose again
+                console.log('Form reset complete - date left empty for user to choose');
+            }, 3000); // Wait 3 seconds before reset
+            
+            return false;
+        }
+        
+        // Set up date input
+        document.addEventListener('DOMContentLoaded', function() {
+            const visitDateInput = document.getElementById('visitDate');
+            if (visitDateInput) {
+                // Get tomorrow's date
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                const tomorrowStr = tomorrow.toISOString().split('T')[0];
+                
+                // Set minimum date to tomorrow (can't select today or past dates)
+                visitDateInput.min = tomorrowStr;
+                
+                // Don't set default value - let user choose
+                // visitDateInput.value = tomorrowStr; // REMOVED THIS LINE
+                
+                console.log('Date input setup complete - min date set to:', tomorrowStr);
+            }
+        });
+    </script>
+
+    <!-- Tips Section -->
+    <section class="visit-tips">
+        <h2>Visitor Tips</h2>
+        <div class="tips-grid">
+            <div class="tip">
+                <i class="fa-solid fa-clock"></i>
+                <p>Arrive early to avoid crowds and enjoy the exhibitions at your own pace</p>
+            </div>
+            <div class="tip">
+                <i class="fa-solid fa-ticket"></i>
+                <p>Book tickets online for priority access and special exhibition entry</p>
+            </div>
+            <div class="tip">
+                <i class="fa-solid fa-camera"></i>
+                <p>Bring a camera for personal photos, but avoid flash photography</p>
+            </div>
+            <div class="tip">
+                <i class="fa-solid fa-shoe-prints"></i>
+                <p>Wear comfortable shoes as you'll be walking through extensive galleries</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="title-icon">
+                    <img src="./images/logo.png" alt="GEM Logo">
+                </div>
+                <div class="title-text">Grand Egyptian Museum</div>
+            </div>
+
+            <div class="footer-details">
+                <div class="detail-item">
+                    <div class="icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Giza Plateau, Cairo, Egypt<br>Adjacent to the Pyramids</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h4>Opening Hours</h4>
+                        <p>Daily: 9:00 AM - 6:00 PM<br>Last entry: 5:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h4>Contact</h4>
+                        <p>+20 2 123 456 789<br>info@gem.gov.eg</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-media">
+                <span><i class="fab fa-facebook"></i></span>
+                <span><i class="fab fa-twitter"></i></span>
+                <span><i class="fab fa-instagram"></i></span>
+                <span><i class="fab fa-youtube"></i></span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | GEM</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="toast.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="hamburger.js"></script>
+    <script src="theme.js"></script>
+    <script src="contact-toast.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <section class="navbar-section">
+        <div class="nav-bar">
+            <div class="nav-logo">
+                <div class="logo-img"><img src="./images/logo.png" alt=""></div>
+                <div class="logo-text">GEM</div>
+            </div>
+
+            <div class="nav-items">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./collections.html">Collections</a></li>
+                    <li><a href="./news.html">News</a></li>
+                    <li><a href="map.html">Map</a></li>
+                    <li><a href="foodcorner.html">Food Corner</a></li>
+                    <li><a href="./visit.html">Visit</a></li>
+                    <li><a href="./contact.html" class="active">Contact</a></li>
+                    <li><a href="./team.html">Team</a></li>
+                </ul>
+            </div>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="theme-toggle">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+
+            <div class="cta"><a href="./visit.html#plan"> Book Tickets</a></div>
+        </div>
+    </section>
+
+    <!-- Contact Hero Section -->
+    <section class="visit-hero">
+        <video src="./video/hero-vedio1.mp4" autoplay muted loop playsinline class="hero-video"></video>
+        <div class="video-overlay">
+            
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="visit-info">
+        <div class="visit-intro">
+            <h2>Contact Details</h2>
+            <p>Our team is here to assist you. Reach out via phone, email, or our contact form below.</p>
+        </div>
+
+        <div class="visit-cards">
+            <div class="visit-card">
+                <i class="fa-solid fa-location-crosshairs"></i>
+                <h3>Location</h3>
+                <p>
+                    Alexandria Desert Rd, Kafr Nassar,<br>
+                    Al Haram, Giza Governorate, Egypt
+                </p>
+            </div>
+
+            <div class="visit-card">
+                <i class="fa-solid fa-phone"></i>
+                <h3>Phone</h3>
+                <p>+20 2 3333 3333</p>
+            </div>
+
+            <div class="visit-card">
+                <i class="fa-solid fa-message"></i>
+                <h3>Email</h3>
+                <p>info@gem.gov.eg</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="booking-section">
+        <div class="booking-container">
+
+            <div class="booking-text">
+                <h5>CONTACT FORM</h5>
+                <h2>Send Us a Message</h2>
+                <p>
+                    Fill out the form and we will get back to you as soon as possible.
+                </p>
+            </div>
+
+            <form class="booking-form" id="contactForm">
+                <div class="form-group">
+                    <label for="contactFullName">Full Name *</label>
+                    <input type="text" id="contactFullName" name="fullName" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactEmail">Email Address *</label>
+                    <input type="email" id="contactEmail" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactPhone">Phone Number *</label>
+                    <input type="tel" id="contactPhone" name="phone" placeholder="Enter your phone number" required pattern="[0-9]{11}" title="Please enter a valid 11-digit phone number">
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="contactMessage">Your Message *</label>
+                    <textarea id="contactMessage" name="message" placeholder="Enter your message" required rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="booking-btn" onclick="handleContact(event)">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Contact Form Toast System
+        function showContactToast(message, type = 'success') {
+            // Remove any existing toasts
+            const existing = document.querySelectorAll('.contact-toast');
+            existing.forEach(toast => toast.remove());
+            
+            // Create toast
+            const toast = document.createElement('div');
+            toast.className = `contact-toast contact-toast-${type}`;
+            toast.textContent = message;
+            
+            // Style it
+            toast.style.cssText = `
+                position: fixed !important;
+                top: 20px !important;
+                right: 20px !important;
+                background: ${type === 'success' ? '#28a745' : '#dc3545'} !important;
+                color: white !important;
+                padding: 15px 20px !important;
+                border-radius: 8px !important;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+                z-index: 999999 !important;
+                font-family: 'Cairo', Arial, sans-serif !important;
+                font-size: 14px !important;
+                max-width: 300px !important;
+                border: 3px solid white !important;
+                opacity: 0 !important;
+                transform: translateX(100%) !important;
+                transition: all 0.3s ease !important;
+            `;
+            
+            // Add to body
+            document.body.appendChild(toast);
+            
+            // Animate in
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateX(0)';
+            }, 10);
+            
+            // Remove after 4 seconds
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.parentNode.removeChild(toast);
+                    }
+                }, 300);
+            }, 4000);
+        }
+        
+        // Handle contact form
+        function handleContact(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            const form = document.getElementById('contactForm');
+            const fullName = document.getElementById('contactFullName')?.value?.trim() || '';
+            const email = document.getElementById('contactEmail')?.value?.trim() || '';
+            const phone = document.getElementById('contactPhone')?.value?.trim() || '';
+            const message = document.getElementById('contactMessage')?.value?.trim() || '';
+            
+            console.log('Contact form values:', {
+                fullName: `"${fullName}"`,
+                email: `"${email}"`,
+                phone: `"${phone}"`,
+                message: `"${message}"`
+            });
+            
+            // Validation
+            const errors = [];
+            if (!fullName) errors.push('Full Name');
+            if (!email) errors.push('Email Address');
+            if (!phone) errors.push('Phone Number');
+            if (!message) errors.push('Message');
+            
+            if (errors.length > 0) {
+                console.log('Contact validation errors:', errors);
+                showContactToast(`يرجى ملء الحقول التالية: ${errors.join(', ')}`, 'error');
+                return false;
+            }
+            
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                showContactToast('يرجى إدخال بريد إلكتروني صحيح', 'error');
+                return false;
+            }
+            
+            // Phone validation
+            const phonePattern = /^[0-9]{11}$/;
+            if (!phonePattern.test(phone)) {
+                showContactToast('يرجى إدخال رقم هاتف صحيح مكون من 11 رقم', 'error');
+                return false;
+            }
+            
+            // Success
+            showContactToast('تم ارسال رسالتك بنجاح! سيتم الرد على ايميلك باسرع وقت', 'success');
+            
+            // Reset form after delay
+            setTimeout(() => {
+                form.reset();
+                console.log('Contact form reset after success');
+            }, 3000);
+            
+            return false;
+        }
+    </script>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="title-icon"><img src="./images/logo.png" alt=""></div>
+                <div class="title-text">GEM</div>
+            </div>
+
+            <div class="footer-details">
+                <div class="detail-item">
+                    <div class="icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+                    <div>
+                        <h4>Location</h4>
+                        <p>
+                            Alexandria Desert Rd, Kafr Nassar,<br>
+                            Al Haram, Giza Governorate, Egypt
+                        </p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+20 2 3333 3333</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="icon"><i class="fa-solid fa-message"></i></div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@gem.gov.eg</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="toast.js"></script>
+</body>
+</html>
